@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 app.post("/commands", async (req, res) => {
     try {
         const command = req.body;
-        const result = await db.collection("commands").insertOne(command);
+        const result = await db.collection("shutdown").insertOne(command);
         res.status(200).json({ message: "Command added successfully", result });
     } catch (err) {
         console.error("Error adding command:", err);
