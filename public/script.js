@@ -6,7 +6,7 @@ document.getElementById("sendCommandButton").addEventListener("click", async () 
     };
 
     try {
-        const response = await fetch("http://localhost:10000/commands", {
+        const response = await fetch("https://shutdown-app-1.onrender.com/commands", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
