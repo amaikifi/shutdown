@@ -24,12 +24,13 @@ let db;
 // Middleware setup
 app.use(cors());
 app.use(express.json());
+app.set('views', './views')
 app.set("view engine", "ejs"); // Set EJS as the view engine
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static('public'));
 
 // Endpoint to serve the HTML page
 app.get("/", (req, res) => {
-    res.render("index"); // Render the page using EJS
+    res.render("index.ejs"); // Render the page using EJS
 });
 
 // Endpoint to add commands to the database
